@@ -25,4 +25,15 @@ async function createDemoEmployee() {
   }
 }
 
-module.exports = { createDemoEmployee };
+// Method lấy tất cả employees
+async function getAllEmployees() {
+  try {
+    const snapshot = await db.ref("employees").once("value"); // Lấy dữ liệu từ Firebase
+    return snapshot.val() || {}; // Trả về dữ liệu hoặc object rỗng nếu không có dữ liệu
+  } catch (error) {
+    console.error("❌ Error fetching employees:", error);
+    throw new Error("Failed to fetch employees");
+  }
+}
+
+module.exports = { createDemoEmployee, getAllEmployees };

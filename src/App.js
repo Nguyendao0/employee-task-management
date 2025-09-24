@@ -10,9 +10,8 @@ function App() {
     <div>
       <Container>
         <Header />
-        <TestSMS />
-        {/* <FormVerify />
-        <Employee /> */}
+
+        <Employee />
       </Container>
     </div>
   );

@@ -18,7 +18,7 @@ app.use(cors());
 
 // Đăng ký các route
 // app.use('/api/owner', ownerRoutes);
-app.use('/api/employee', employeeRoutes);
+app.use('/api/employees', employeeRoutes);
 
 // Lấy PORT từ biến môi trường hoặc dùng mặc định là 5000
 const PORT = process.env.PORTSV || 5000;
@@ -28,10 +28,5 @@ const PORT = process.env.PORTSV || 5000;
 app.listen(PORT, async () => {
   console.log(` Server running on http://localhost:${PORT}`);
 
-  try {
-    const result = await createDemoEmployee();
-    console.log(" Demo employee created:", result);
-  } catch (err) {
-    console.error(" Error creating demo employee:", err.message);
-  }
+
 });
